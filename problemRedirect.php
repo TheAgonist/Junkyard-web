@@ -8,5 +8,5 @@ include 'phpWrapper.php';
 		<br>
 		<br>
 		<p id="title_thanks">Problem Created!</p>
-		<a href="index.php"><button>Home</button></a>
+		<a href="Home.php"><button>Home</button></a>
 	</div>

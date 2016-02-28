@@ -8,7 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 </head>
 <body>
-
+<div align="center" class="logo">
+<img class="img img3" src="images/Logo2.png" width="124" height="124" >
+	</div>
 	<div class="container">
 		<header> </header>
 		<section>

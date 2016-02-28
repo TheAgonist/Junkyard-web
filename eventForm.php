@@ -20,24 +20,26 @@
 						<form action="eventRedirect.php" autocomplete="on" method='post'>
 							<h1>Event Form</h1>
 							<p>
-								<label for="title" class="title" > Title : </label>
-								<input id="title" name="title" required="required" type="text" />
+								<label for="title" class="title"> Title : </label> <input
+									id="title" name="title" required="required" type="text" />
 							</p>
 							<p>
-								<label for="description" class="desc" > Description : </label>
-								<input id="description" name="description" type="text" />
+								<label for="description" class="desc"> Description : </label> <input
+									id="description" name="description" type="text" />
 							</p>
 							<p>
-								<label for="date" class="date" > Date : </label>
-								<input id="date" name="date" required="required" type="text" placeholder="dd/MM/YY 2012-07-08 11:14:15.638276" />
+								<label for="date" class="date"> Date : </label> <input id="date"
+									name="date" required="required" type="text"
+									placeholder="dd/MM/YY 2012-07-08 11:14:15.638276" />
 							</p>
 							<p>
-								<label for="picture" class="yourpicture">Picture: </label>
-								 <input type="file" name="picture" id="picture"> 
+								<label for="picture" class="yourpicture">Picture: </label> <input
+									type="file" name="picture" id="picture">
 							</p>
-
+							
 							<p class="login button">
-								<input type="submit" value="Login" />
+
+								<input type="submit" value="Submit" />
 							</p>
 						</form>
 					</div>

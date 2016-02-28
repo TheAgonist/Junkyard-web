@@ -33,7 +33,7 @@
 							</p>
 
 							<p class="login button">
-								<input type="submit" value="Login" />
+								<input type="submit" value="Submit" />
 							</p>
 						</form>
 					</div>

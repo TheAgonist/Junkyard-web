@@ -29,6 +29,9 @@ function myFunction() {
     document.getElementById("demo").innerHTML = "Hello World";
 }
 </script>
+<div align="center" class="logo">
+<img class="img img3" src="images/Logo2.png" width="124" height="124" >
+	</div>
 	<div align="center">
 			<button class="button button1" onclick="parent.location='Home.php'">Problems</button>
 			<button class="button button1" onclick="parent.location='listAllEvents.php'">Events</button>

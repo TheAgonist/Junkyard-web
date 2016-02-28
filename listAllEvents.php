@@ -1,10 +1,14 @@
 <link rel="stylesheet" type="text/css" href="css/Home.css" />
+<div align="center" class="logo">
+	<img class="img img3" src="images/Logo2.png" width="124" height="124">
+</div>
 <div align="center">
 	<button class="button button1" onclick="parent.location='Home.php'">Problems</button>
 	<button class="button button1"
 		onclick="parent.location='listAllEvents.php'">Events</button>
-	<button class="button button1">Click Me!</button>
-	<button class="button button1" onclick="parent.location='index.php'">Log In</button>
+	<button class="button button1" onclick="parent.location='NewPorE.php'">Create</button>
+	<button class="button button1" onclick="parent.location='index.php'">Log
+		In</button>
 </div>
 <?php
 try {
@@ -49,7 +53,7 @@ foreach ( $db->query ( $sql ) as $row ) {
 					</button>
 				</form>
 			</td>
-		<td><button class="button button3">Up vote</button></td>
+			<td><button class="button button3">Up vote</button></td>
 		</tr>
 		<tr>
 			<td><button class="button button3">Share</button></td>

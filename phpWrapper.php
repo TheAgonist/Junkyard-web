@@ -14,7 +14,6 @@ try {
 }
 
 // $function serves to specify the type of querry you want
-
 if ($function == 1) {
 	
 	// Insert a new user
@@ -31,6 +30,34 @@ if ($function == 1) {
 	$f_name = $_POST ['firstnamesignup'];
 	$l_name = $_POST ['lastnamesignup'];
 	$mail = $_POST ['emailsignup'];
+	$sql->execute ();
+}
+
+if ($function == 3) {
+
+	// Add a new event
+
+	$sql = $db->prepare ( "INSERT INTO event (title, description, x, y,picture, interested, time_Due, problem_id_fk) VALUES (:title,:description,:x,:y, :picture, :interested, :time_Due, :problem_id_fk)" );
+	$sql->bindParam ( ':title', $title );
+	$sql->bindParam ( ':description', $description );
+	$sql->bindParam ( ':x', $x );
+	$sql->bindParam ( ':y', $y );
+	$sql->bindParam ( ':picture', $picture );
+	$sql->bindParam ( ':interested', $interested);
+	$sql->bindParam ( ':time_Due', $time_Due);
+	$sql->bindParam ( ':problem_id_fk', $problem_id_fk);
+	
+	//var_dump($_POST);
+	$title='title';
+	$description='description';
+	$x=42.526628;
+	$y=27.450328;
+	$picture='picture';
+	$problem_id_fk=1;
+	$user_id_fk=1;
+	$interested=1;
+	$time_Due="2016-02-02 00:00:00";
+	/*--------------*/
 	$sql->execute ();
 }
 
@@ -53,30 +80,7 @@ if ($function == 2) {
 	$sql->execute ();
 }
 
-if ($function == 3) {
-	
-	// Add a new event
-	
-	$sql = $db->prepare ( "INSERT INTO event (title, description, x, y,picture,user_ID_fk,interested) VALUES (:title,:description,:x,:y, :picture, :user_id_fk, :interested)" );
-	$sql->bindParam ( ':title', $title );
-	$sql->bindParam ( ':description', $description );
-	$sql->bindParam ( ':x', $x );
-	$sql->bindParam ( ':y', $y );
-	$sql->bindParam ( ':picture', $picture );
-	$sql->bindParam ( ':user_id_fk', $user_id_fk );
-	$sql->bindParam ( ':interested', $interested );
-	
-	$title=$_POST['title'];
-	$description=$_POST['description'];
-	$x=42.526628;
-	$y=27.450328;
-	$picture=$_POST['picture'];
-	$problem_id_fk=1;
-	$user_id_fk=1;
-	$interested=1;
-	$time_Due="2012-07-08";
-	$sql->execute ();
-}
+
 
 if ($function == 4) {
 	
@@ -130,7 +134,6 @@ if ($function == 6) {
 		if ($row ['user_ID'])
 			$flag = 5;
 	
-	echo $flag;
 }
 
 if ($function == 7) {

@@ -41,7 +41,7 @@ foreach ( $db->query ( $sql ) as $row ) {
 					</button>
 				</form>
 			</td>
-			<td class="tg-yw4l"><button class="button button3">Up vote</button></td>
+			<td class="tg-yw4l"><button class="button button3">Up Vote</button></td>
 		</tr>
 		<tr>
 			<td class="tg-yw4l"><button class="button button3">Share</button></td>

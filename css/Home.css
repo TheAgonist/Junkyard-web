@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 body {
-    background-color: #d0e4fe;
+    background: #fff url(../images/bg.jpg) repeat top left;
 }
 .button {
 	
@@ -11,7 +11,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: -8px -2px;
+    margin: 10px -2px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -96,6 +96,11 @@ img
 	margin: -32px -128px;
 	border-radius: 6px;
 }
+.img3
+{
+	margin: 0px 0px;
+	border-radius: 0px;
+}
 .img2{
 	
 	 max-width: 384px;  
@@ -103,4 +108,39 @@ img
 	margin: 0px 0px;
 	left: 64px;
     top: 64px;
+}
+.button4
+{
+	border:1;
+	width: 64px;  
+    height: 64px;
+    margin: -4px -4px;
+    border-radius: 6px;
+    background-size: 64px 64px;
+	background: #fff url(../images/Upvote1.png);
+	background-img:  url(../images/Upvote1.png);
+	
+	
+}
+.button5
+{
+	border:1;
+	border-color: green;
+	width: 64px;  
+    height: 64px;
+    margin: -4px -4px;
+    border-radius: 6px;
+	
+}
+.button4:hover {
+	background: #fff url(../images/Upvote2.png) repeat top left;
+}
+.button5:hover {
+    background-color: white;
+    color: green;
+}
+.logo
+{
+	margin: -10px -10px;
+	background-color: #3E3790;	
 }
