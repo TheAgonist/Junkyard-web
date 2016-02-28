@@ -13,7 +13,6 @@ try {
 	echo "Error: " . $e;
 }
 
-
 // $function serves to specify the type of querry you want
 
 if ($function == 1) {
@@ -27,11 +26,11 @@ if ($function == 1) {
 	$sql->bindParam ( ':l_name', $l_name );
 	$sql->bindParam ( ':mail', $mail );
 	
-	$name = $_POST['usernamesignup'];
-	$pass = $_POST['passwordsignup'];
-	$f_name = $_POST['firstnamesignup'];
-	$l_name = $_POST['lastnamesignup'];
-	$mail = $_POST['emailsignup'];
+	$name = $_POST ['usernamesignup'];
+	$pass = $_POST ['passwordsignup'];
+	$f_name = $_POST ['firstnamesignup'];
+	$l_name = $_POST ['lastnamesignup'];
+	$mail = $_POST ['emailsignup'];
 	$sql->execute ();
 }
 
@@ -39,27 +38,18 @@ if ($function == 2) {
 	
 	// Add a new problem
 	
-	$sql = $db->prepare ( "INSERT INTO problem (title, description, submitted, x, y,picture,user_ID_fk,rating,date_Solved) VALUES (:title,:description,:submitted,:x,:y, :picture, :user_id_fk, :rating, :date_Solved)" );
+	$sql = $db->prepare ( "INSERT INTO problem (title, description, x, y,picture) VALUES (:title,:description,:x,:y, :picture)" );
 	$sql->bindParam ( ':title', $title );
 	$sql->bindParam ( ':description', $description );
-	$sql->bindParam ( ':submitted', $submitted );
 	$sql->bindParam ( ':x', $x );
 	$sql->bindParam ( ':y', $y );
 	$sql->bindParam ( ':picture', $picture );
-	$sql->bindParam ( ':user_id_fk', $user_id_fk );
-	$sql->bindParam ( ':rating', $rating );
-	$sql->bindParam ( ':date_Solved', $date_Solved );
 	
-	$title = "1231";
-	$description = "1";
-	$submitted = "1";
-	$x = "1";
-	$y = "1";
-	$picture = "1";
-	$user_id_fk = "1";
-	$rating = "1";
-	$solved = "1";
-	$date_Solved = "1";
+	$title = $_POST ['title'];
+	$description = $_POST ['description'];
+	$x = "42.526628";
+	$y = "27.450328";
+	$picture = $_POST ['picture'];
 	$sql->execute ();
 }
 
@@ -67,28 +57,24 @@ if ($function == 3) {
 	
 	// Add a new event
 	
-	$sql = $db->prepare ( "INSERT INTO event (title, description, submitted, x, y,picture,problem_ID_fk,user_ID_fk,interested,time_Due) VALUES (:title,:description,:submitted,:x,:y, :picture,:problem_id_fk, :user_id_fk, :interested, :time_Due)" );
+	$sql = $db->prepare ( "INSERT INTO event (title, description, x, y,picture,user_ID_fk,interested) VALUES (:title,:description,:x,:y, :picture, :user_id_fk, :interested)" );
 	$sql->bindParam ( ':title', $title );
 	$sql->bindParam ( ':description', $description );
-	$sql->bindParam ( ':submitted', $submitted );
 	$sql->bindParam ( ':x', $x );
 	$sql->bindParam ( ':y', $y );
 	$sql->bindParam ( ':picture', $picture );
-	$sql->bindParam ( ':problem_id_fk', $problem_id_fk );
 	$sql->bindParam ( ':user_id_fk', $user_id_fk );
 	$sql->bindParam ( ':interested', $interested );
-	$sql->bindParam ( ':time_Due', $time_Due );
 	
-	$title = "123";
-	$description = "1";
-	$submitted = "1";
-	$x = 1;
-	$y = 1;
-	$picture = "1";
-	$problem_id_fk = "1";
-	$user_id_fk = "1";
-	$interested = "1";
-	$time_Due = "1";
+	$title=$_POST['title'];
+	$description=$_POST['description'];
+	$x=42.526628;
+	$y=27.450328;
+	$picture=$_POST['picture'];
+	$problem_id_fk=1;
+	$user_id_fk=1;
+	$interested=1;
+	$time_Due="2012-07-08";
 	$sql->execute ();
 }
 
@@ -135,8 +121,8 @@ if ($function == 5) {
 }
 
 if ($function == 6) {
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$username = $_POST ['username'];
+	$password = $_POST ['password'];
 	$flag = 0;
 	
 	$sql = "SELECT user_ID FROM user WHERE username='$username' AND password='$password'";
@@ -150,7 +136,7 @@ if ($function == 6) {
 if ($function == 7) {
 	$sql = "SELECT * FROM problem ";
 	foreach ( $db->query ( $sql ) as $row ) {
-		echo $row ['problem_ID'] ;
+		echo $row ['problem_ID'];
 		echo $row ['title'];
 		echo $row ['description'];
 		echo $row ['submitted'];
@@ -162,23 +148,21 @@ if ($function == 7) {
 		echo $row ['date_Solved'];
 	}
 }
-if($function == 8)
-{
-	$i=1;
-	$i+=1;
+if ($function == 8) {
+	$i = 1;
+	$i += 1;
 	$sql = "SELECT * FROM problem WHERE problem_id = '$i'";
-	foreach($db->query($sql) as $row)
-	{
-		echo $row['problem_ID'] ;
-		echo $row['title'] ;
-		echo $row['description'] ;
-		echo $row['submitted'] ;
-		echo $row['x'] ;
-		echo $row['y'] ;
-		echo $row['picture'] ;
-		echo $row['rating'] ;
-		echo $row['solved'] ;
-		echo $row['date_Solved'] ;
+	foreach ( $db->query ( $sql ) as $row ) {
+		echo $row ['problem_ID'];
+		echo $row ['title'];
+		echo $row ['description'];
+		echo $row ['submitted'];
+		echo $row ['x'];
+		echo $row ['y'];
+		echo $row ['picture'];
+		echo $row ['rating'];
+		echo $row ['solved'];
+		echo $row ['date_Solved'];
 	}
 }
 ?>
