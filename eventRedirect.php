@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -10,6 +11,11 @@
 <body id='thanks'>
 <?php
 
+=======
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<body id='thanks'>
+<?php
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 try {
 	$db = new PDO ("mysql:host=127.0.0.1;dbname=bs_fixer;charset=utf8", "root", "" );
 	/* Other Codes */
@@ -57,5 +63,9 @@ try {
 		<a href="index.php"><button>Home</button></a>
 	</div>
 
+<<<<<<< HEAD
 </body>
 </html>
+=======
+</body>
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86

@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <body id='thanks'>
 <?php
+<<<<<<< HEAD
 try {
 	$db = new PDO ( "mysql:host=127.0.0.1;dbname=bs_fixer;charset=utf8", "root", "" );
 	/* Other Codes */
@@ -55,6 +56,11 @@ if ($count == 1) {
 <?php
 }
 ob_end_flush ();
+=======
+$function = 6;
+include 'phpWrapper.php';
+
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 ?>
 
 

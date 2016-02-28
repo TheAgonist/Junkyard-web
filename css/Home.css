@@ -1,6 +1,10 @@
 @CHARSET "ISO-8859-1";
 body {
+<<<<<<< HEAD
     background-image: url"images/bg.jpg";
+=======
+    background-color: #d0e4fe;
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 }
 .button {
 	

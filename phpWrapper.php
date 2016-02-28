@@ -13,7 +13,10 @@ try {
 	echo "Error: " . $e;
 }
 
+<<<<<<< HEAD
 $function = 7;
+=======
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 // $function serves to specify the type of querry you want
 
 if ($function == 1) {
@@ -27,11 +30,19 @@ if ($function == 1) {
 	$sql->bindParam ( ':l_name', $l_name );
 	$sql->bindParam ( ':mail', $mail );
 	
+<<<<<<< HEAD
 	$name = "GoshoGoten692412";
 	$pass = "tainoobichamazis";
 	$f_name = "Georgi";
 	$l_name = "Mehmed";
 	$mail = "mumun@abv.bg";
+=======
+	$name = $_POST ['usernamesignup'];
+	$pass = $_POST ['passwordsignup'];
+	$f_name = $_POST ['firstnamesignup'];
+	$l_name = $_POST ['lastnamesignup'];
+	$mail = $_POST ['emailsignup'];
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 	$sql->execute ();
 }
 
@@ -39,6 +50,7 @@ if ($function == 2) {
 	
 	// Add a new problem
 	
+<<<<<<< HEAD
 	$sql = $db->prepare ( "INSERT INTO problem (title, description, submitted, x, y,picture,user_ID_fk,rating,date_Solved) VALUES (:title,:description,:submitted,:x,:y, :picture, :user_id_fk, :rating, :date_Solved)" );
 	$sql->bindParam ( ':title', $title );
 	$sql->bindParam ( ':description', $description );
@@ -60,6 +72,20 @@ if ($function == 2) {
 	$rating = "1";
 	$solved = "1";
 	$date_Solved = "1";
+=======
+	$sql = $db->prepare ( "INSERT INTO problem (title, description, x, y,picture) VALUES (:title,:description,:x,:y, :picture)" );
+	$sql->bindParam ( ':title', $title );
+	$sql->bindParam ( ':description', $description );
+	$sql->bindParam ( ':x', $x );
+	$sql->bindParam ( ':y', $y );
+	$sql->bindParam ( ':picture', $picture );
+	
+	$title = $_POST ['title'];
+	$description = $_POST ['description'];
+	$x = "42.526628";
+	$y = "27.450328";
+	$picture = $_POST ['picture'];
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 	$sql->execute ();
 }
 
@@ -67,6 +93,7 @@ if ($function == 3) {
 	
 	// Add a new event
 	
+<<<<<<< HEAD
 	$sql = $db->prepare ( "INSERT INTO event (title, description, submitted, x, y,picture,problem_ID_fk,user_ID_fk,interested,time_Due) VALUES (:title,:description,:submitted,:x,:y, :picture,:problem_id_fk, :user_id_fk, :interested, :time_Due)" );
 	$sql->bindParam ( ':title', $title );
 	$sql->bindParam ( ':description', $description );
@@ -89,6 +116,26 @@ if ($function == 3) {
 	$user_id_fk = "1";
 	$interested = "1";
 	$time_Due = "1";
+=======
+	$sql = $db->prepare ( "INSERT INTO event (title, description, x, y,picture,user_ID_fk,interested) VALUES (:title,:description,:x,:y, :picture, :user_id_fk, :interested)" );
+	$sql->bindParam ( ':title', $title );
+	$sql->bindParam ( ':description', $description );
+	$sql->bindParam ( ':x', $x );
+	$sql->bindParam ( ':y', $y );
+	$sql->bindParam ( ':picture', $picture );
+	$sql->bindParam ( ':user_id_fk', $user_id_fk );
+	$sql->bindParam ( ':interested', $interested );
+	
+	$title=$_POST['title'];
+	$description=$_POST['description'];
+	$x=42.526628;
+	$y=27.450328;
+	$picture=$_POST['picture'];
+	$problem_id_fk=1;
+	$user_id_fk=1;
+	$interested=1;
+	$time_Due="2012-07-08";
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 	$sql->execute ();
 }
 
@@ -135,8 +182,13 @@ if ($function == 5) {
 }
 
 if ($function == 6) {
+<<<<<<< HEAD
 	$username = 'GoshoGoten69';
 	$password = 'tainoobichamazis';
+=======
+	$username = $_POST ['username'];
+	$password = $_POST ['password'];
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 	$flag = 0;
 	
 	$sql = "SELECT user_ID FROM user WHERE username='$username' AND password='$password'";
@@ -150,7 +202,11 @@ if ($function == 6) {
 if ($function == 7) {
 	$sql = "SELECT * FROM problem ";
 	foreach ( $db->query ( $sql ) as $row ) {
+<<<<<<< HEAD
 		echo $row ['problem_ID'] ;
+=======
+		echo $row ['problem_ID'];
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 		echo $row ['title'];
 		echo $row ['description'];
 		echo $row ['submitted'];
@@ -162,6 +218,7 @@ if ($function == 7) {
 		echo $row ['date_Solved'];
 	}
 }
+<<<<<<< HEAD
 if($function == 8)
 {
 	$i=1;
@@ -179,6 +236,23 @@ if($function == 8)
 		echo $row['rating'] ;
 		echo $row['solved'] ;
 		echo $row['date_Solved'] ;
+=======
+if ($function == 8) {
+	$i = 1;
+	$i += 1;
+	$sql = "SELECT * FROM problem WHERE problem_id = '$i'";
+	foreach ( $db->query ( $sql ) as $row ) {
+		echo $row ['problem_ID'];
+		echo $row ['title'];
+		echo $row ['description'];
+		echo $row ['submitted'];
+		echo $row ['x'];
+		echo $row ['y'];
+		echo $row ['picture'];
+		echo $row ['rating'];
+		echo $row ['solved'];
+		echo $row ['date_Solved'];
+>>>>>>> c04c972612f44a8517ac3447eb23c7fa2dfb9d86
 	}
 }
 ?>
