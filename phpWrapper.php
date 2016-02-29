@@ -36,38 +36,23 @@ if ($function == 1) {
 if ($function == 3) {
  
 	// Add a new event
-	$sql = $db->prepare ( "INSERT INTO `event`(`event_ID`, `title`, `description`, `x`, `y`, `picture`, `problem_ID_fk`, `user_ID_fk`, `interested`, `submitted`, `time_Due`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','2','[value-9]','[value-10]','[value-11]')" );
-	//$sql = $db->prepare ( "INSERT INTO event (title, description, x, y,picture,user_ID_fk,interested) VALUES (:title,:description,:x,:y, :picture,:user_id_fk, :interested)" );
-	
-	$sql->execute ();
-	/*$sql->bindParam ( ':title', $title );
-	$sql->bindParam ( ':description', $description );
-	$sql->bindParam ( ':x', $x );		
-	$sql->bindParam ( ':y', $y );
-	$sql->bindParam ( ':picture', $picture );
-	$sql->bindParam ( ':interested', $interested);
-	$sql->bindParam ( ':time_Due', $time_Due);
-	$sql->bindParam ( ':problem_id_fk', $problem_id_fk);*/
+	$sql = $db->prepare ( "INSERT INTO `event`(`title`, `description`, `x`, `y`, `picture`, `problem_ID_fk`, `user_ID_fk`, `time_Due`) VALUES (:title,:description,:x,:y, :picture,:problem_id_fk,:user_id_fk, :time_due)" );
     $sql->bindParam ( ':title', $title );
 	$sql->bindParam ( ':description', $description );
 	$sql->bindParam ( ':x', $x );
 	$sql->bindParam ( ':y', $y );
 	$sql->bindParam ( ':picture', $picture );
+	$sql->bindParam ( ':problem_id_fk', $problem_id_fk );
 	$sql->bindParam ( ':user_id_fk', $user_id_fk );
-	$sql->bindParam ( ':interested', $interested );
-	$sql->bindParam ( ':time_Due', $time_Due );
-	
-	
-	//var_dump($_POST);
-	$title='title';
-	$description='description';
-	$x=42.526628;
-	$y=27.450328;
-	$picture='picture';
-	$problem_id_fk=1;
+	$sql->bindParam ( ':time_due', $time_Due );
+	$title = $_POST ['title'];
+	$description = $_POST ['description'];
+	$x = "42.526628";
+	$y = "27.450328";
+	$picture = $_POST ['picture'];
+	$problem_id_fk=0;
 	$user_id_fk=2;
-	$interested=1;
-	$time_Due="2016-02-02 00:00:00";
+	$time_Due=$_POST['date'];
 	/*--------------*/
 	$sql->execute ();
 }
