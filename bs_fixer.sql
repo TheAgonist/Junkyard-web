@@ -258,7 +258,7 @@ ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`event_ID_fk`) REFERENCES `event` (
 -- Constraints for table `event`
 --
 ALTER TABLE `event`
-ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`problem_ID_fk`) REFERENCES `problem` (`problem_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+-- ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`problem_ID_fk`) REFERENCES `problem` (`problem_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `event_ibfk_2` FOREIGN KEY (`user_ID_fk`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

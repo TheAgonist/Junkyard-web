@@ -3,6 +3,7 @@
 <?php
 $function = 3;
 include 'phpWrapper.php';
+echo $function;
 ?>		
 <div id="box">
 		<br>
