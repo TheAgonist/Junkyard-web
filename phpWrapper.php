@@ -47,8 +47,8 @@ if ($function == 3) {
 	$sql->bindParam ( ':time_due', $time_Due );
 	$title = $_POST ['title'];
 	$description = $_POST ['description'];
-	$x = "42.526628";
-	$y = "27.450328";
+	$x = $_POST['x'];
+	$y = $_POST['y'];
 	$picture = $_POST ['picture'];
 	$problem_id_fk=0;
 	$user_id_fk=2;
